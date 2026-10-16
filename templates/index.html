@@ -612,6 +612,7 @@ header {
     <div class="set-tab" data-set="1" onclick="switchSet(1)">บ่าย</div>
     <div class="set-tab" data-set="2" onclick="switchSet(2)">นอย-ลาว</div>
     <div class="set-tab" data-set="3" onclick="switchSet(3)">ดึก</div>
+    <div class="set-tab" data-set="4" onclick="switchSet(4)">ไทย</div>
     
     <button type="button" class="preview-toggle-btn" id="preview-toggle-btn" onclick="togglePreview()">
       <!-- ... (SVG code) ... -->
@@ -632,7 +633,6 @@ const SETS = [
   {
     label: 'เช้า',
     items: [
-      { name: 'ลาวประชาชน',      time: '07:45' },
       { name: 'ลาว EXTRA',        time: '08:25' },
       { name: 'นิเคอิเช้า VIP',      time: '09:00' },
       { name: 'ฮานอยอาเซียน',      time: '09:10' },
@@ -707,6 +707,15 @@ const SETS = [
       { name: 'ดาวโจนส์',          time: '04:00' },
       { name: 'ดาวโจนส์ VIP',      time: '04:00' },
       { name: 'ดาวโจนส์ STAR',     time: '04:30' },
+    ]
+  },
+    {
+    label: 'ไทย',
+    items: [
+      { name: 'ธกส',       time: '' },
+      { name: 'ออมสิน',    time: '' },
+      { name: 'ไทย',       time: '' },
+      { name: 'รัฐบาลไทย', time: '' },
     ]
   }
 ];
@@ -808,7 +817,7 @@ function updateUI() {
 
 function switchSet(idx) {
   currentSet = idx;
-  const tabNames = ['เช้า', 'บ่าย', 'นอย-ลาว', 'ดึก']; // กำหนดชื่อแท็บทั้ง 4
+  const tabNames = ['เช้า', 'บ่าย', 'นอย-ลาว', 'ดึก', 'ไทย']; // กำหนดชื่อแท็บทั้ง 4
   
   document.querySelectorAll('.set-tab').forEach((t, i) => {
     t.classList.toggle('active', i === idx);
